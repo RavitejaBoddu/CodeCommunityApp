@@ -1,22 +1,27 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import Account from './components/Account/Account';
+import { AuthContextProvider } from './context/AuthContext';
+import Login from './components/Login/Login';
+import SignUp from './components/register/SignUp';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <AuthContextProvider>
+      <Navbar />
+    <Routes>
+      <Route path='/' element={<Login />} />
+      <Route path='/signup' element={<SignUp />} />
+      <Route path='/account' element={
+      <ProtectedRoute><Account /></ProtectedRoute>
+      } />
+    </Routes>
+    </AuthContextProvider>
+    </>
   );
 }
 
