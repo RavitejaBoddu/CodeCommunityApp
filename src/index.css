@@ -1,10 +1,17 @@
+@font-face{
+  font-family: Gumela;
+  src: url('../src/fonts/Gumela Regular.otf');
+}
+@font-face{
+  font-family: Arcade;
+  src: url('../src/fonts/ARCADECLASSIC.TTF');
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  margin: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Gumela';
+  letter-spacing: 1px;
 }
 
 code {
