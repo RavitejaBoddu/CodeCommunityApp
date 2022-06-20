@@ -43,15 +43,6 @@ const Login = () => {
       console.log(error.message);
     }
   };
-  // const handleAppleSignIn = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await googleSignIn();
-  //     navigate("/account");
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
 
   return (
     <>
@@ -94,7 +85,7 @@ const Login = () => {
             </p>
             <p className="or">
               <span>or</span>
-            </p>  
+            </p>
             <span>Signin with</span>
           </div>
           <div className="login-icons">

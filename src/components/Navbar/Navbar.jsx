@@ -7,22 +7,23 @@ const Navbar = () => {
   const { loggedIn, setLoggedIn, logout } = UserAuth();
   const navigate = useNavigate();
 
-
- const handleSignout = async () => {
-  try {
-    await logout();
-    setLoggedIn(true);
-    navigate("/");
-  } catch (e) {
-    alert(e.message);
-  }
- }
+  const handleSignout = async () => {
+    try {
+      await logout();
+      setLoggedIn(true);
+      navigate("/");
+    } catch (e) {
+      alert(e.message);
+    }
+  };
 
   return (
     <div className="navbar-wrapper">
       <div className="navbar-left">
         <div className="navbar-left-name">
-          <p><span>&#60;</span> Code-Community<span> &#8725; &#62;</span></p>
+          <p>
+            <span>&#60;</span> Code-Community<span> &#8725; &#62;</span>
+          </p>
         </div>
       </div>
       <div className="navbar-right">
@@ -32,7 +33,10 @@ const Navbar = () => {
               <>
                 <li>
                   <Link
-                    style={{ textDecoration: "none", color: 'rgb(255, 239, 148)' }}
+                    style={{
+                      textDecoration: "none",
+                      color: "rgb(255, 239, 148)",
+                    }}
                     to="/"
                   >
                     Login
@@ -40,7 +44,10 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    style={{ textDecoration: "none", color:' rgb(255, 239, 148)' }}
+                    style={{
+                      textDecoration: "none",
+                      color: " rgb(255, 239, 148)",
+                    }}
                     to="/signup"
                   >
                     Signup
@@ -49,10 +56,8 @@ const Navbar = () => {
               </>
             ) : (
               <>
-              <li>Account</li>
-              <li onClick={handleSignout}>
-                  Logout
-              </li>
+                <li>Account</li>
+                <li onClick={handleSignout}>Logout</li>
               </>
             )}
           </ul>

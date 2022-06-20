@@ -1,28 +1,28 @@
 .login-icons {
-    display: flex;
-    margin-top: 1rem;
-    gap: 2rem;
+  display: flex;
+  margin-top: 1rem;
+  gap: 2rem;
 }
 
 .login-icons button {
-    outline: none;
-    background: black;
+  outline: none;
+  background: black;
 }
 
 .login-icon {
-    height: 45px;
-    width: 45px;
+  height: 45px;
+  width: 45px;
 }
 
 .or {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid rgb(255, 255, 255);
-    line-height: 0.1em;
-    margin: 10px 0 20px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  line-height: 0.1em;
+  margin: 10px 0 20px;
 }
 
 .or span {
-    background: rgb(0, 0, 0);
-    padding: 0 10px;
+  background: rgb(0, 0, 0);
+  padding: 0 10px;
 }

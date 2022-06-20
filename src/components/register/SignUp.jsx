@@ -3,7 +3,6 @@ import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
-import icon from "../../images/coding-icons.png";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -17,7 +16,6 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
     try {
       await createUser(email, password);
       setLoggedIn(false);
@@ -70,7 +68,12 @@ const SignUp = () => {
                 className="input"
               />
               <label htmlFor="pass1">Re-enter password:</label>
-              <input type="password" name="password1" id="pass1" className="input" />
+              <input
+                type="password"
+                name="password1"
+                id="pass1"
+                className="input"
+              />
               <div className="button-container">
                 <input type="submit" className="button" value="Signup" />
               </div>

@@ -1,27 +1,27 @@
-.main-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.user-container{
-    display: flex;
-    flex-direction: column;
+.user-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .button {
-    font-family: 'Gumela';
-    background: #1f86fc;
-    color: white;
-    font-size: 20px;
-    border-radius: 5px;
-    padding: 5px 10px;
-    width: 100px;
+  font-family: "Gumela";
+  background: #1f86fc;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 100px;
 }
 
 .button:hover {
-    cursor: pointer;
-    color: #1f86fc;
-    background: white;
-    border: 1px solid rgb(61, 58, 58);
+  cursor: pointer;
+  color: #1f86fc;
+  background: white;
+  border: 1px solid rgb(61, 58, 58);
 }
