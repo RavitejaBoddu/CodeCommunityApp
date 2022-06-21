@@ -7,20 +7,32 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   FacebookAuthProvider,
+  sendEmailVerification,
 } from "firebase/auth";
 import { auth } from "../firebase";
-// import { useNavigate } from "react-router-dom";
 
 const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(true);
-  // const navigate = useNavigate();
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
+  const signup = async (email, password, name) => {
+    const result = await auth.createUserWithEmailAndPassword( email, password);
+    result.user.updateProfile({
+      displayName: name
+    })
+    await result.user.sendEmailVerification();
+  }
+
+  const verify = (auth) => {
+    sendEmailVerification(auth.currentUser);
+
+  }
 
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
@@ -37,16 +49,6 @@ export const AuthContextProvider = ({ children }) => {
     const facebookAuthProvider = new FacebookAuthProvider();
     return signInWithPopup(auth, facebookAuthProvider);
   };
-
-  // const handleLogout = async () => {
-  //   try {
-  //     await logout();
-  //     navigate("/");
-  //     setLoggedIn(true);
-  //   } catch (e) {
-  //     alert(e.message);
-  //   }
-  // };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -69,7 +71,8 @@ export const AuthContextProvider = ({ children }) => {
         setLoggedIn,
         googleSignIn,
         facebookSignIn,
-        // handleLogout
+        signup,
+        verify
       }}
     >
       {children}

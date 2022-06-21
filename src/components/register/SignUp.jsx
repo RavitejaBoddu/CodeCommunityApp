@@ -3,25 +3,25 @@ import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
-import icon from "../../images/coding-icons.png";
+import { auth } from "../../firebase";
 
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+ 
+  const { createUser, verify, user } = UserAuth();
 
-  const { createUser, setLoggedIn } = UserAuth();
-
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
       await createUser(email, password);
-      setLoggedIn(false);
-      navigate("/account");
+      verify(auth);
+      alert("Please complete the Verification by clicking on the link sent to your email")
     } catch (e) {
       setError(e.message);
       alert(e.message);
