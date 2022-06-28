@@ -21,6 +21,9 @@ jobs:
         with:
           install: npm install
           start: npm start
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3.1.0
+      
     
     
  
