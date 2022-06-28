@@ -38,7 +38,7 @@ const Navbar = () => {
                     Login
                   </Link>
                 </li>
-                <li>
+                <li id="signup">
                   <Link
                     style={{ textDecoration: "none", color:' rgb(255, 239, 148)' }}
                     to="/signup"

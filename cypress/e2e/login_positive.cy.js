@@ -12,7 +12,7 @@ describe("Test Login Functionality", () => {
 
     cy.get("#login").click();
 
-    cy.get("#user_Email").contains("test@test.com");
+    cy.get("#user_Email").contains(email);
 
     cy.get("#logout-btn").click();
   });
