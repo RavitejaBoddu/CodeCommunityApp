@@ -19,9 +19,10 @@ jobs:
         with:
           install: npm install
           start: npm start
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3.1.0
+      # Test run video was always captured, so this action uses "always()" condition
+      - uses: actions/upload-artifact@v2
+        if: always()
         with:
-          name: videos
-          path: /home/runner/work/CodeCommunityApp/CodeCommunityApp/cypress/videos/
+          name: cypress-videos
+          path: cypress/videos
     
