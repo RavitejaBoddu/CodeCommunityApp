@@ -14,10 +14,28 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    var atposition = email.indexOf("@");
+    var dotposition = email.lastIndexOf(".");
     try {
-      await login(email, password);
-      navigate("/account");
-      setLoggedIn(false);
+      if (email == null || email === "") {
+        alert("Please enter the email");
+      } else if (password == null || password === "") {
+        alert("please enter the password");
+      } else if (
+        atposition < 1 ||
+        dotposition < atposition + 2 ||
+        dotposition + 2 >= email.length
+      ) {
+        alert("Please enter a valid email address");
+      } else {
+        try {
+          await login(email, password);
+          navigate("/account");
+          setLoggedIn(false);
+        } catch (e) {
+          alert(e.message);
+        }
+      }
     } catch (e) {
       alert(e.message);
     }
@@ -43,15 +61,6 @@ const Login = () => {
       console.log(error.message);
     }
   };
-  // const handleAppleSignIn = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await googleSignIn();
-  //     navigate("/account");
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
 
   return (
     <>
@@ -86,7 +95,12 @@ const Login = () => {
                 className="input"
               />
               <div className="button-container">
-                <input type="submit" className="button" value="Login" id="login" />
+                <input
+                  type="submit"
+                  className="button"
+                  value="Login"
+                  id="login"
+                />
               </div>
             </form>
             <p>
@@ -94,10 +108,10 @@ const Login = () => {
             </p>
             <p className="or">
               <span>or</span>
-            </p>  
+            </p>
             <span>Signin with</span>
           </div>
-          <div className="login-icons" >
+          <div className="login-icons">
             <button id="google-btn">
               <img
                 className="login-icon"

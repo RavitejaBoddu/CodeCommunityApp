@@ -25,4 +25,22 @@ describe("login using wrong credentials", () => {
     });
   });
 
+  it("Login without entering email", () => {
+    cy.visit("http://localhost:3000/");
+
+    cy.get('#login').click();
+    cy.on("window:alert", (t) => {
+      expect(t).to.contains("Please enter the email");
+    });
+  });
+
+  it("Login without entering password", () => {
+    cy.visit("http://localhost:3000/");
+    cy.get("#email").type("test@test.com");
+    cy.get('#login').click();
+    cy.on("window:alert", (t) => {
+      expect(t).to.contains("Please enter the password");
+    });
+  });
+
 });

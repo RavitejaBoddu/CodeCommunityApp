@@ -16,22 +16,4 @@ describe("Test Login Functionality", () => {
 
     cy.get("#logout-btn").click();
   });
-
-  it("evaluates google Login", () => {
-    cy.visit("http://localhost:3000/");
-    cy.get("#google-btn").click();
-
-    cy.get("#user_Email").contains("raviteja1312boddu@gmail.com");
-
-    cy.get("#logout-btn").click();
-  });
-
-  it("evaluates google Login", () => {
-    cy.visit("http://localhost:3000/");
-    cy.get("#facebook-btn").click();
-
-    cy.get("#user_Email").contains("raviteja901085@gmail.com");
-
-    cy.get("#logout-btn").click();
-  });
 });
