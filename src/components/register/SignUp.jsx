@@ -23,9 +23,9 @@ const SignUp = () => {
     try {
       if (name == null || name === "") {
         alert("please enter your firstname");
-      }else if(email == null || email === ""){
+      } else if (email == null || email === "") {
         alert("Please enter your email");
-      }else if (password == null || password === "") {
+      } else if (password == null || password === "") {
         alert("please enter the password");
       } else if (password1 == null || password1 === "") {
         alert("please re-enter the password");
@@ -33,13 +33,13 @@ const SignUp = () => {
         alert("Password must be at least 6 characters long");
       } else if (password !== password1) {
         alert("Password does not match");
-      } else if ( 
+      } else if (
         atposition < 1 ||
         dotposition < atposition + 2 ||
         dotposition + 2 >= email.length
       ) {
         alert("Please enter a valid email address");
-       }else {
+      } else {
         try {
           await createUser(email, password);
           setLoggedIn(false);
@@ -58,7 +58,6 @@ const SignUp = () => {
     <>
       <div className="main-container">
         <div className="left-container">
-          {/* <img className="coding-icons" src={icon} alt="coding icons" /> */}
           <div className="text-container float">
             <span className="text">&#60; &#62;</span>
             <span className="text indent1">Join</span>
@@ -78,7 +77,7 @@ const SignUp = () => {
                 name="fullname"
                 id="uname"
                 className="input"
-                // required
+        
               />
               <label htmlFor="email">Email:</label>
               <input
@@ -87,7 +86,7 @@ const SignUp = () => {
                 name="email"
                 id="email"
                 className="input"
-                // required
+              
               />
               <label htmlFor="pass">password:</label>
               <input
@@ -96,7 +95,7 @@ const SignUp = () => {
                 name="password"
                 id="pass"
                 className="input"
-                // required
+                
               />
               <label htmlFor="pass1">Re-enter password:</label>
               <input
@@ -105,7 +104,6 @@ const SignUp = () => {
                 id="pass1"
                 className="input"
                 onChange={(e) => setPassword1(e.target.value)}
-                // required
               />
               <div className="button-container">
                 <input

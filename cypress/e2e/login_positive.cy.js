@@ -1,7 +1,5 @@
-
 const email = "test@test.com";
-const password ="12345678"
-
+const password = "12345678";
 
 describe("Test Login Functionality", () => {
   it("evaluates Login with correct credentials", () => {
