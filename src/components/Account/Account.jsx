@@ -22,8 +22,8 @@ const Account = () => {
     <div className="main-container">
       <div className="user-container">
         <h1>Welcome User</h1>
-        <p>User Email:{user && user.email}</p>
-        <button className="button" onClick={handleLogout}>
+        <p id="user_Email">User Email:{user && user.email}</p>
+        <button className="button" id="logout-btn" onClick={handleLogout}>
           Logout
         </button>
       </div>
