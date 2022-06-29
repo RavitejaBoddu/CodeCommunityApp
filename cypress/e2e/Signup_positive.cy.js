@@ -3,8 +3,8 @@ const email = "raviteja@sample.com";
 const password = "12345678";
 
 describe("Test Login Functionality", () => {
-
-  it("evaluates Login with correct credentials", () => {
+//This will automatically fail as the email has been already used for signup.
+  it("evaluate signup with correct credentials", () => {
     cy.visit("http://localhost:3000/");
     cy.get("#signup").click();
 
@@ -17,5 +17,5 @@ describe("Test Login Functionality", () => {
     cy.get("#user_Email").contains(email);
     cy.get("#logout-btn").click();
   });
-  
+
 });

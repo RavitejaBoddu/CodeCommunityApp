@@ -112,22 +112,26 @@ const Login = () => {
             <span>Signin with</span>
           </div>
           <div className="login-icons">
-            
-              <img
-                id="google-btn"
-                className="login-icon"
-                onClick={handleGoogleSignIn}
-                src={google}
-                alt="google"
-              />
-              <img
-                id="facebook-btn"
-                className="login-icon"
-                onClick={handleFacebookSignIn}
-                src={facebook}
-                alt="facebook"
-              />
-              <img className="login-icon" id="apple-btn" src={apple} alt="apple" />
+            <img
+              id="google-btn"
+              className="login-icon"
+              onClick={handleGoogleSignIn}
+              src={google}
+              alt="google"
+            />
+            <img
+              id="facebook-btn"
+              className="login-icon"
+              onClick={handleFacebookSignIn}
+              src={facebook}
+              alt="facebook"
+            />
+            <img
+              className="login-icon"
+              id="apple-btn"
+              src={apple}
+              alt="apple"
+            />
           </div>
         </div>
       </div>
