@@ -97,8 +97,8 @@ const Login = () => {
             </p>  
             <span>Signin with</span>
           </div>
-          <div className="login-icons">
-            <button>
+          <div className="login-icons" >
+            <button id="google-btn">
               <img
                 className="login-icon"
                 onClick={handleGoogleSignIn}
@@ -106,7 +106,7 @@ const Login = () => {
                 alt="google"
               />
             </button>
-            <button>
+            <button id="facebook-btn">
               <img
                 className="login-icon"
                 onClick={handleFacebookSignIn}
